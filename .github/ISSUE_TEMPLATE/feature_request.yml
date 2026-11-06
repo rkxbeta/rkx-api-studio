@@ -1,0 +1,32 @@
+name: Feature request
+description: Suggest an improvement to the free RKX API Studio plugin.
+labels: ["enhancement", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for the suggestion. Please search existing issues first. If you plan to send a pull request, wait until we have agreed on the approach here.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+      description: Describe the use case, for example the front end or integration you are building.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you have considered
+  - type: dropdown
+    id: contribute
+    attributes:
+      label: Would you like to contribute a pull request for this?
+      options:
+        - "No"
+        - "Yes"

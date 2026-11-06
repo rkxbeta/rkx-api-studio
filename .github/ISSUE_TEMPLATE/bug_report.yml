@@ -1,0 +1,77 @@
+name: Bug report
+description: Something in the free RKX API Studio plugin does not work as expected.
+labels: ["bug", "needs triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug. Please do **not** report security vulnerabilities here; see SECURITY.md.
+        Problems that only happen with the Pro add-on go to https://rkxbeta.com/contact.
+  - type: input
+    id: plugin-version
+    attributes:
+      label: RKX API Studio version
+      placeholder: "1.0.0"
+    validations:
+      required: true
+  - type: input
+    id: wp-version
+    attributes:
+      label: WordPress version
+      placeholder: "6.8.3"
+    validations:
+      required: true
+  - type: input
+    id: php-version
+    attributes:
+      label: PHP version
+      placeholder: "8.3"
+    validations:
+      required: true
+  - type: dropdown
+    id: multisite
+    attributes:
+      label: Is this a Multisite installation?
+      options:
+        - "No"
+        - "Yes"
+    validations:
+      required: true
+  - type: dropdown
+    id: pro
+    attributes:
+      label: Is the RKX API Studio Pro add-on active?
+      description: If yes, please check whether the problem still happens with only the free plugin active.
+      options:
+        - "No"
+        - "Yes, and the problem also happens without it"
+        - "Yes, and the problem only happens with it"
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Go to RKX API Studio > Create Endpoint
+        2. ...
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: Include error messages, PHP log entries or browser console errors. Remove any API keys or private data first.
+    validations:
+      required: true
+  - type: textarea
+    id: environment
+    attributes:
+      label: Other plugins and theme
+      description: Active plugins and theme, if relevant.

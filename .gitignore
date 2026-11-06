@@ -1,0 +1,26 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Packaged archives (releases are published on WordPress.org)
+*.zip
+
+# Environment and local configuration
+.env
+.env.*
+wp-env-home/
+.wp-env.override.json
+
+# Logs and caches
+*.log
+.phpunit.cache/
+.phpunit.result.cache
+.eslintcache
+
+# Editors and OS files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db

@@ -1,0 +1,443 @@
+/**
+ * RKX API Studio — Settings Page Styles
+ *
+ * @package RKX_API_Studio
+ */
+
+/* =========================================================================
+   Settings Layout
+   ========================================================================= */
+
+.rkx-as-settings-app {
+	max-width: 800px;
+	margin: 0;
+	padding: 20px 0;
+}
+
+.rkx-as-settings-app h1 {
+	font-size: 23px;
+	font-weight: 400;
+	margin: 0 0 4px;
+	padding: 0;
+	line-height: 1.3;
+}
+
+.rkx-as-settings-app .rkx-as-page-description {
+	font-size: 13px;
+	color: #757575;
+	margin: 0 0 20px;
+	line-height: 1.5;
+}
+
+.rkx-as-header-title-row {
+	display: flex;
+	align-items: center;
+	gap: 12px;
+	flex-wrap: wrap;
+	margin-bottom: 4px;
+}
+
+.rkx-as-header-title-row--with-nav {
+	justify-content: space-between;
+}
+
+.rkx-as-admin-nav {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	flex-wrap: wrap;
+}
+
+.rkx-as-admin-nav__link {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	padding: 6px 10px;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 1.4;
+	color: #2271b1;
+	background: #f6f7f7;
+	border: 1px solid #dcdcde;
+	border-radius: 4px;
+	text-decoration: none;
+	transition: background-color 0.15s, border-color 0.15s, color 0.15s;
+}
+
+.rkx-as-admin-nav__link:hover {
+	color: #135e96;
+	background: #f0f0f1;
+	border-color: #8c8f94;
+	text-decoration: none;
+}
+
+.rkx-as-admin-nav__link:focus-visible {
+	outline: 2px solid #2271b1;
+	outline-offset: 2px;
+	box-shadow: none;
+}
+
+.rkx-as-admin-nav__link--pro {
+	color: #135e96;
+	background: #f0f6fc;
+	border-color: #72aee6;
+	font-weight: 600;
+}
+
+.rkx-as-admin-nav__link--pro:hover {
+	color: #0a4b78;
+	background: #e5f0fa;
+	border-color: #2271b1;
+}
+
+.rkx-as-edition-indicator {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+}
+
+.rkx-as-edition-action {
+	display: inline-flex;
+	align-items: center;
+	gap: 4px;
+	font-size: 12px;
+	font-weight: 500;
+	color: #2271b1;
+	text-decoration: none;
+}
+
+.rkx-as-edition-action:hover {
+	color: #135e96;
+	text-decoration: underline;
+}
+
+.rkx-as-edition-action--button {
+	padding: 2px 8px;
+	background: #f6f7f7;
+	border: 1px solid #c3c4c7;
+	border-radius: 3px;
+	color: #2c3338;
+}
+
+.rkx-as-edition-action--button:hover {
+	background: #f0f0f1;
+	border-color: #8c8f94;
+	color: #1d2327;
+	text-decoration: none;
+}
+
+/* =========================================================================
+   Notices
+   ========================================================================= */
+
+.rkx-as-settings-app .components-notice {
+	margin: 0 0 20px;
+}
+
+/* =========================================================================
+   Tabs
+   ========================================================================= */
+
+.rkx-as-settings-app__tabs {
+	display: flex;
+	gap: 0;
+	border-bottom: 1px solid #c3c4c7;
+	margin-bottom: 0;
+}
+
+.rkx-as-settings-app__tab {
+	padding: 8px 16px;
+	font-size: 14px;
+	font-weight: 500;
+	color: #50575e;
+	background: transparent;
+	border: 1px solid transparent;
+	border-bottom: none;
+	border-radius: 4px 4px 0 0;
+	cursor: pointer;
+	transition: color 0.15s, background 0.15s;
+	margin-bottom: -1px;
+}
+
+.rkx-as-settings-app__tab:hover {
+	color: #1e1e1e;
+	background: #f6f7f7;
+}
+
+.rkx-as-settings-app__tab--active {
+	color: #1e1e1e;
+	background: #fff;
+	border-color: #c3c4c7;
+	border-bottom-color: #fff;
+}
+
+/* =========================================================================
+   Tab Content
+   ========================================================================= */
+
+.rkx-as-settings-app__tab-content {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-top: none;
+	border-radius: 0 0 4px 4px;
+	padding: 24px;
+}
+
+/* =========================================================================
+   General Tab
+   ========================================================================= */
+
+.rkx-as-general-tab .components-toggle-control {
+	margin-bottom: 0;
+}
+
+/* =========================================================================
+   Tools Tab
+   ========================================================================= */
+
+.rkx-as-tools-tab .components-notice {
+	margin: 0 0 20px;
+}
+
+.rkx-as-tools-tab__card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 20px 24px;
+	margin-bottom: 20px;
+}
+
+.rkx-as-tools-tab__card:last-child {
+	margin-bottom: 0;
+}
+
+.rkx-as-tools-tab__card-title {
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0 0 8px;
+	color: #1e1e1e;
+}
+
+.rkx-as-tools-tab__card-description {
+	font-size: 13px;
+	color: #757575;
+	margin: 0 0 16px;
+	line-height: 1.5;
+}
+
+/* =========================================================================
+   Cache Settings Card
+   ========================================================================= */
+
+.rkx-as-tools-tab__card .components-toggle-control {
+	margin-bottom: 16px;
+}
+
+.rkx-as-tools-tab__card .components-select-control {
+	margin-bottom: 16px;
+}
+
+/* =========================================================================
+   Confirmation Modal
+   ========================================================================= */
+
+.rkx-as-confirmation-modal .components-modal__content {
+	min-width: 400px;
+}
+
+.rkx-as-confirmation-modal__message {
+	font-size: 14px;
+	margin: 0 0 20px;
+	line-height: 1.6;
+}
+
+.rkx-as-confirmation-modal__actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+}
+
+/* =========================================================================
+   Actions
+   ========================================================================= */
+
+.rkx-as-settings-app__actions {
+	margin-top: 20px;
+}
+
+/* =========================================================================
+   Duplicate Resolution Modal
+   ========================================================================= */
+
+.rkx-as-duplicate-modal .components-modal__content {
+	min-width: 480px;
+}
+
+.rkx-as-duplicate-modal__description {
+	font-size: 13px;
+	color: #757575;
+	margin: 0 0 16px;
+	line-height: 1.5;
+}
+
+.rkx-as-duplicate-modal__table {
+	width: 100%;
+	border-collapse: collapse;
+	margin-bottom: 20px;
+	font-size: 13px;
+}
+
+.rkx-as-duplicate-modal__table th {
+	text-align: left;
+	font-weight: 600;
+	padding: 8px 12px;
+	border-bottom: 2px solid #c3c4c7;
+	color: #1e1e1e;
+}
+
+.rkx-as-duplicate-modal__table td {
+	padding: 8px 12px;
+	border-bottom: 1px solid #e0e0e0;
+	vertical-align: middle;
+}
+
+.rkx-as-duplicate-modal__table code {
+	font-size: 12px;
+	background: #f0f0f0;
+	padding: 2px 6px;
+	border-radius: 2px;
+}
+
+.rkx-as-duplicate-modal__toggle {
+	display: inline-flex;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	overflow: hidden;
+}
+
+.rkx-as-duplicate-modal__toggle-btn {
+	padding: 4px 12px;
+	font-size: 12px;
+	border: none;
+	background: #fff;
+	color: #50575e;
+	cursor: pointer;
+	transition: background 0.15s, color 0.15s;
+}
+
+.rkx-as-duplicate-modal__toggle-btn:first-child {
+	border-right: 1px solid #c3c4c7;
+}
+
+.rkx-as-duplicate-modal__toggle-btn:hover {
+	background: #f6f7f7;
+}
+
+.rkx-as-duplicate-modal__toggle-btn--active {
+	background: #007cba;
+	color: #fff;
+}
+
+.rkx-as-duplicate-modal__toggle-btn--active:hover {
+	background: #006ba1;
+}
+
+.rkx-as-duplicate-modal__actions {
+	display: flex;
+	justify-content: flex-end;
+	gap: 8px;
+}
+
+/* =========================================================================
+   Security Tab
+   ========================================================================= */
+
+.rkx-as-security-tab {
+	max-width: 100%;
+}
+
+.rkx-as-security-tab .components-notice {
+	margin: 0 0 20px;
+}
+
+.rkx-as-security-tab__card {
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 4px;
+	padding: 20px 24px;
+	margin-bottom: 20px;
+}
+
+.rkx-as-security-tab__card:last-child {
+	margin-bottom: 0;
+}
+
+.rkx-as-security-tab__card-title {
+	font-size: 14px;
+	font-weight: 600;
+	margin: 0 0 8px;
+	color: #1e1e1e;
+}
+
+.rkx-as-security-tab__card-description {
+	font-size: 13px;
+	color: #757575;
+	margin: 0 0 16px;
+	line-height: 1.5;
+}
+
+.rkx-as-security-tab__key-display {
+	background: #f9f9f9;
+	border: 1px solid #e0e0e0;
+	border-radius: 4px;
+	padding: 16px;
+	margin-top: 16px;
+}
+
+.rkx-as-security-tab__key-notice {
+	font-size: 13px;
+	color: #1e1e1e;
+	margin: 0 0 12px;
+	font-weight: 500;
+}
+
+.rkx-as-security-tab__key-value {
+	display: block;
+	font-size: 13px;
+	background: #fff;
+	border: 1px solid #c3c4c7;
+	border-radius: 2px;
+	padding: 8px 12px;
+	margin-bottom: 12px;
+	word-break: break-all;
+}
+
+.rkx-as-security-tab__key-actions {
+	display: flex;
+	gap: 8px;
+}
+
+.rkx-as-security-tab__last-regenerated {
+	font-size: 13px;
+	color: #757575;
+	margin: 0 0 12px;
+}
+
+/* Usage Instructions */
+
+.rkx-as-security-tab__code-block {
+	display: block;
+	font-size: 12px;
+	background: #1e1e1e;
+	color: #d4d4d4;
+	padding: 10px 14px;
+	border-radius: 4px;
+	margin: 8px 0 0;
+	word-break: break-all;
+	white-space: pre-wrap;
+	font-family: Menlo, Consolas, Monaco, monospace;
+}
+
+.rkx-as-security-tab__card-description--spaced {
+	margin-top: 16px;
+}

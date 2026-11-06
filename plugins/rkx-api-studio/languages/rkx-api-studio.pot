@@ -1,0 +1,1235 @@
+# Copyright (C) 2026 RKXBeta
+# This file is distributed under the GPL-2.0-or-later.
+msgid ""
+msgstr ""
+"Project-Id-Version: RKX API Studio 1.0.0\n"
+"Report-Msgid-Bugs-To: https://rkxbeta.com/contact\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"POT-Creation-Date: 2026-11-05T12:42:42+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.12.0\n"
+"X-Domain: rkx-api-studio\n"
+
+#. Plugin Name of the plugin
+#: rkx-api-studio.php
+#: includes/class-admin-page.php:135
+#: includes/class-admin-page.php:136
+msgid "RKX API Studio"
+msgstr ""
+
+#. Plugin URI of the plugin
+#: rkx-api-studio.php
+msgid "https://rkxbeta.com/plugins/rkx-api-studio"
+msgstr ""
+
+#. Description of the plugin
+#: rkx-api-studio.php
+msgid "Create custom, clean REST API endpoints visually."
+msgstr ""
+
+#. Author of the plugin
+#: rkx-api-studio.php
+msgid "RKXBeta"
+msgstr ""
+
+#. Author URI of the plugin
+#: rkx-api-studio.php
+msgid "https://rkxbeta.com/"
+msgstr ""
+
+#: includes/class-admin-page.php:151
+#: includes/class-admin-page.php:152
+msgid "All Endpoints"
+msgstr ""
+
+#: includes/class-admin-page.php:165
+#: includes/class-admin-page.php:166
+#: build/index.js:6
+#: build/index.js:11
+#: build/index.js:12
+msgid "Create Endpoint"
+msgstr ""
+
+#: includes/class-admin-page.php:179
+#: includes/class-admin-page.php:180
+#: includes/class-admin-page.php:258
+#: build/index.js:6
+#: build/settings-index.js:8
+msgid "Settings"
+msgstr ""
+
+#: includes/class-admin-page.php:197
+#: includes/class-admin-page.php:198
+#: includes/class-admin-page.php:204
+#: build/index.js:11
+msgid "Edit Endpoint"
+msgstr ""
+
+#: includes/class-admin-page.php:218
+#: includes/class-admin-page.php:234
+#: includes/class-config-controller.php:111
+#: includes/class-security-key-manager.php:145
+#: includes/class-settings-controller.php:98
+msgid "You do not have permission to access this page."
+msgstr ""
+
+#: includes/class-admin-page.php:266
+#: build/index.js:6
+#: build/settings-index.js:8
+msgid "Documentation"
+msgstr ""
+
+#: includes/class-admin-page.php:274
+#: build/index.js:6
+#: build/settings-index.js:8
+msgid "Explore Pro ↗"
+msgstr ""
+
+#: includes/class-admin-page.php:414
+msgid "RKX API Studio: Build files are missing. Please run \"npm run build\" in the plugin directory to compile the admin interface."
+msgstr ""
+
+#: includes/class-config-controller.php:123
+#: includes/class-security-key-manager.php:156
+#: includes/class-settings-controller.php:110
+msgid "You do not have permission to perform this action."
+msgstr ""
+
+#: includes/class-config-controller.php:151
+msgid "The taxonomy parameter is required."
+msgstr ""
+
+#: includes/class-config-controller.php:159
+msgid "The specified taxonomy is not available."
+msgstr ""
+
+#: includes/class-config-controller.php:335
+msgid "data_source parameter is required."
+msgstr ""
+
+#: includes/class-config-controller.php:479
+msgid "Unknown data source."
+msgstr ""
+
+#: includes/class-config-controller.php:560
+#: includes/class-config-controller.php:654
+#: includes/class-config-controller.php:696
+msgid "Failed to save endpoint configuration. Please try again."
+msgstr ""
+
+#: includes/class-config-controller.php:592
+#: includes/class-config-controller.php:681
+msgid "The requested endpoint configuration was not found."
+msgstr ""
+
+#: includes/class-config-controller.php:741
+msgid "This configuration uses a formatter that is not available on this site. It was not saved."
+msgstr ""
+
+#: includes/class-config-controller.php:773
+#: includes/class-config-controller.php:805
+msgid "This configuration uses authentication restrictions that are not available on this site. It was not saved."
+msgstr ""
+
+#: includes/class-config-controller.php:980
+msgid "This HTTP method is not available on this site."
+msgstr ""
+
+#: includes/class-config-controller.php:988
+#: build/index.js:11
+msgid "Endpoint name is required."
+msgstr ""
+
+#: includes/class-config-controller.php:994
+#: build/index.js:11
+msgid "Endpoint slug is required."
+msgstr ""
+
+#: includes/class-config-controller.php:996
+msgid "Slug must contain only lowercase letters, numbers, and hyphens."
+msgstr ""
+
+#: includes/class-config-controller.php:1008
+msgid "This slug is already in use by another endpoint with the same method."
+msgstr ""
+
+#: includes/class-config-controller.php:1021
+msgid "A data source must be selected."
+msgstr ""
+
+#: includes/class-config-controller.php:1031
+msgid "Invalid data source type."
+msgstr ""
+
+#: includes/class-config-controller.php:1037
+msgid "At least one field must be selected."
+msgstr ""
+
+#. translators: %s: comma-separated list of invalid field names
+#: includes/class-config-controller.php:1092
+#: includes/class-config-controller.php:1100
+#, php-format
+msgid "Invalid fields for the selected data source: %s."
+msgstr ""
+
+#: includes/class-config-controller.php:1110
+msgid "Invalid formatter configuration."
+msgstr ""
+
+#. translators: %s: comma-separated list of unknown formatter IDs
+#: includes/class-config-controller.php:1145
+#, php-format
+msgid "Unknown formatters: %s."
+msgstr ""
+
+#: includes/class-config-controller.php:1160
+msgid "Items per page must be between 1 and 100."
+msgstr ""
+
+#: includes/class-config-controller.php:1166
+msgid "Offset must be a non-negative integer."
+msgstr ""
+
+#: includes/class-config-controller.php:1172
+msgid "Order must be either ASC or DESC."
+msgstr ""
+
+#: includes/class-config-controller.php:1181
+msgid "Invalid orderby field for the selected data source."
+msgstr ""
+
+#: includes/class-config-controller.php:1189
+msgid "Endpoint configuration is invalid."
+msgstr ""
+
+#. translators: 1: taxonomy slug, 2: post type slug
+#: includes/class-config-controller.php:1410
+#, php-format
+msgid "Taxonomy '%1$s' is not registered to the '%2$s' data source."
+msgstr ""
+
+#: includes/class-config-controller.php:1422
+#: includes/class-config-controller.php:1432
+msgid "Taxonomy filter values must be arrays of positive integers."
+msgstr ""
+
+#: includes/class-route-registrar.php:425
+msgid "This endpoint's data source is not available."
+msgstr ""
+
+#. translators: %s: taxonomy slug
+#: includes/class-route-registrar.php:569
+#: includes/class-route-registrar.php:581
+#, php-format
+msgid "Taxonomy query parameter '%s' must contain comma-separated positive integers."
+msgstr ""
+
+#: includes/class-security-key-manager.php:256
+msgid "Invalid or missing API key"
+msgstr ""
+
+#: includes/class-settings-controller.php:157
+#: build/settings-index.js:8
+msgid "Failed to save settings. Please try again."
+msgstr ""
+
+#: includes/functions.php:43
+msgid "This endpoint uses a field or formatter type that is not available on this site."
+msgstr ""
+
+#: build/index.js:1
+msgid "Strip HTML Tags"
+msgstr ""
+
+#: build/index.js:1
+msgid "Remove Block Comments"
+msgstr ""
+
+#: build/index.js:1
+msgid "Normalize Whitespace"
+msgstr ""
+
+#: build/index.js:1
+msgid "Trim to 55 words (Excerpt)"
+msgstr ""
+
+#: build/index.js:1
+msgid "Truncate to 200 chars"
+msgstr ""
+
+#: build/index.js:1
+msgid "Format Date"
+msgstr ""
+
+#: build/index.js:1
+msgid "Uppercase"
+msgstr ""
+
+#: build/index.js:1
+msgid "Lowercase"
+msgstr ""
+
+#: build/index.js:1
+msgid "Slugify"
+msgstr ""
+
+#: build/index.js:1
+msgid "Remove Special Chars"
+msgstr ""
+
+#: build/index.js:1
+#: build/index.js:10
+msgid "Custom Meta Field"
+msgstr ""
+
+#: build/index.js:1
+msgid "ID"
+msgstr ""
+
+#: build/index.js:1
+msgid "Title"
+msgstr ""
+
+#: build/index.js:1
+msgid "Content"
+msgstr ""
+
+#: build/index.js:1
+msgid "Excerpt"
+msgstr ""
+
+#: build/index.js:1
+msgid "Featured Image URL"
+msgstr ""
+
+#: build/index.js:1
+#: build/index.js:3
+#: build/settings-index.js:1
+msgid "Slug"
+msgstr ""
+
+#: build/index.js:1
+msgid "Date"
+msgstr ""
+
+#: build/index.js:1
+msgid "Author"
+msgstr ""
+
+#: build/index.js:1
+#: build/index.js:3
+#: build/settings-index.js:1
+msgid "Name"
+msgstr ""
+
+#: build/index.js:1
+#: build/index.js:3
+#: build/index.js:10
+msgid "Description"
+msgstr ""
+
+#: build/index.js:1
+msgid "Count"
+msgstr ""
+
+#: build/index.js:1
+msgid "Parent"
+msgstr ""
+
+#: build/index.js:1
+msgid "Modified"
+msgstr ""
+
+#: build/index.js:1
+#: build/index.js:8
+#: build/index.js:12
+#: build/settings-index.js:1
+#: build/settings-index.js:8
+msgid "Cancel"
+msgstr ""
+
+#: build/index.js:1
+msgid "Create and manage standard REST API endpoints."
+msgstr ""
+
+#: build/index.js:1
+msgid "Configure supported response data."
+msgstr ""
+
+#: build/index.js:1
+msgid "Use the existing Free authentication and formatting functionality."
+msgstr ""
+
+#: build/index.js:1
+msgid "Custom namespaces."
+msgstr ""
+
+#: build/index.js:1
+msgid "Write operations."
+msgstr ""
+
+#: build/index.js:1
+msgid "ACF integration."
+msgstr ""
+
+#: build/index.js:1
+msgid "Gutenberg block parsing."
+msgstr ""
+
+#: build/index.js:1
+msgid "Advanced Regex formatting."
+msgstr ""
+
+#: build/index.js:1
+msgid "Named API keys."
+msgstr ""
+
+#: build/index.js:1
+msgid "RKX API Studio Pro Add-on"
+msgstr ""
+
+#: build/index.js:1
+msgid "Take Your WordPress APIs Further"
+msgstr ""
+
+#: build/index.js:1
+msgid "Extend RKX API Studio with advanced capabilities for custom REST API development, integrations, and authentication."
+msgstr ""
+
+#: build/index.js:1
+msgid "Explore Pro Features"
+msgstr ""
+
+#: build/index.js:1
+msgid "Compare Free & Pro"
+msgstr ""
+
+#: build/index.js:1
+msgid "Free vs Pro Overview"
+msgstr ""
+
+#: build/index.js:1
+msgid "Free"
+msgstr ""
+
+#: build/index.js:1
+msgid "Included"
+msgstr ""
+
+#: build/index.js:1
+msgid "Pro"
+msgstr ""
+
+#: build/index.js:1
+msgid "Add-on"
+msgstr ""
+
+#: build/index.js:1
+msgid "Search endpoints"
+msgstr ""
+
+#. translators: %d: number of selected endpoints
+#: build/index.js:2
+#, js-format
+msgid "%d selected"
+msgid_plural "%d selected"
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/index.js:2
+msgid "Select all"
+msgstr ""
+
+#: build/index.js:2
+msgid "Actions"
+msgstr ""
+
+#: build/index.js:2
+msgid "No endpoints found."
+msgstr ""
+
+#: build/index.js:2
+msgid "Previous"
+msgstr ""
+
+#. translators: 1: current page, 2: total pages
+#: build/index.js:3
+#, js-format
+msgid "Page %1$d of %2$d"
+msgstr ""
+
+#: build/index.js:3
+msgid "Next"
+msgstr ""
+
+#: build/index.js:3
+#: build/index.js:10
+msgid "Posts"
+msgstr ""
+
+#: build/index.js:3
+#: build/index.js:10
+msgid "Pages"
+msgstr ""
+
+#: build/index.js:3
+#: build/index.js:10
+msgid "Categories"
+msgstr ""
+
+#: build/index.js:3
+#: build/index.js:10
+msgid "Tags"
+msgstr ""
+
+#: build/index.js:3
+msgid "Custom Taxonomy"
+msgstr ""
+
+#: build/index.js:3
+msgid "Failed to load endpoints. Please try again."
+msgstr ""
+
+#: build/index.js:3
+#: build/index.js:10
+msgid "Data Source"
+msgstr ""
+
+#: build/index.js:3
+msgid "N/A"
+msgstr ""
+
+#: build/index.js:3
+msgid "Fields"
+msgstr ""
+
+#: build/index.js:3
+msgid "Params Mode"
+msgstr ""
+
+#: build/index.js:3
+msgid "WP Defaults"
+msgstr ""
+
+#: build/index.js:3
+msgid "Custom"
+msgstr ""
+
+#: build/index.js:3
+msgid "API URL"
+msgstr ""
+
+#: build/index.js:3
+msgid "Created"
+msgstr ""
+
+#. translators: %s: comma-separated list of endpoint names that failed to delete
+#: build/index.js:4
+#, js-format
+msgid "Failed to delete: %s"
+msgstr ""
+
+#. translators: %s: endpoint name
+#: build/index.js:5
+#, js-format
+msgid "Cache cleared for endpoint \"%s\"."
+msgstr ""
+
+#. translators: %s: endpoint name
+#: build/index.js:6
+#, js-format
+msgid "Failed to clear cache for endpoint \"%s\". Please try again."
+msgstr ""
+
+#: build/index.js:6
+msgid "Edit"
+msgstr ""
+
+#: build/index.js:6
+msgid "View API"
+msgstr ""
+
+#: build/index.js:6
+msgid "Export"
+msgstr ""
+
+#: build/index.js:6
+#: build/settings-index.js:1
+msgid "Failed to export endpoints. Please try again."
+msgstr ""
+
+#: build/index.js:6
+#: build/index.js:10
+msgid "Clear Cache"
+msgstr ""
+
+#: build/index.js:6
+msgid "Delete"
+msgstr ""
+
+#: build/index.js:6
+msgid "API Endpoints"
+msgstr ""
+
+#: build/index.js:6
+msgid "Create and manage custom REST API endpoints with only the fields you need."
+msgstr ""
+
+#: build/index.js:6
+#: build/settings-index.js:8
+msgid "Plugin links"
+msgstr ""
+
+#: build/index.js:6
+msgid "No endpoints yet. Create your first endpoint to get started."
+msgstr ""
+
+#. translators: %d: number of endpoints to delete
+#: build/index.js:7
+#, js-format
+msgid "Are you sure you want to delete %d endpoint? This action cannot be undone."
+msgid_plural "Are you sure you want to delete %d endpoints? This action cannot be undone."
+msgstr[0] ""
+msgstr[1] ""
+
+#. translators: %s: endpoint name
+#: build/index.js:8
+#, js-format
+msgid "Are you sure you want to delete the endpoint \"%s\"? This action cannot be undone."
+msgstr ""
+
+#. translators: %d: number of endpoints to delete
+#: build/index.js:9
+#, js-format
+msgid "Delete %d Endpoint"
+msgid_plural "Delete %d Endpoints"
+msgstr[0] ""
+msgstr[1] ""
+
+#: build/index.js:9
+msgid "Delete Endpoint"
+msgstr ""
+
+#: build/index.js:9
+msgid "Clear Endpoint Cache"
+msgstr ""
+
+#. translators: %s: endpoint name
+#: build/index.js:10
+#, js-format
+msgid "Are you sure you want to clear the cache for endpoint \"%s\"?"
+msgstr ""
+
+#: build/index.js:10
+msgid "Added"
+msgstr ""
+
+#: build/index.js:10
+msgid "Available Fields"
+msgstr ""
+
+#: build/index.js:10
+msgid "Field formatters"
+msgstr ""
+
+#: build/index.js:10
+msgid "Field Formatters"
+msgstr ""
+
+#: build/index.js:10
+msgid "Enter meta key…"
+msgstr ""
+
+#: build/index.js:10
+msgid "Remove field"
+msgstr ""
+
+#: build/index.js:10
+msgid "Active Output Zone"
+msgstr ""
+
+#: build/index.js:10
+msgid "Drag fields from the Available Fields panel to define your API response structure."
+msgstr ""
+
+#: build/index.js:10
+msgid "JSON Preview"
+msgstr ""
+
+#: build/index.js:10
+msgid "Live Data"
+msgstr ""
+
+#: build/index.js:10
+msgid "Sample Data"
+msgstr ""
+
+#: build/index.js:10
+msgid "Showing up to 3 real items from your site. Full response available at the API URL."
+msgstr ""
+
+#: build/index.js:10
+msgid "No data found for this data source yet. Showing sample data."
+msgstr ""
+
+#: build/index.js:10
+msgid "Loading live data…"
+msgstr ""
+
+#: build/index.js:10
+msgid "Could not load data sources. Showing built-in options only."
+msgstr ""
+
+#: build/index.js:10
+msgid "Post Types"
+msgstr ""
+
+#: build/index.js:10
+msgid "Taxonomies"
+msgstr ""
+
+#: build/index.js:10
+msgid "Require API Key"
+msgstr ""
+
+#: build/index.js:10
+msgid "Endpoints using this method always require a valid API key."
+msgstr ""
+
+#: build/index.js:10
+msgid "Endpoints using this method always require authentication. Generate an API key in the Security settings."
+msgstr ""
+
+#: build/index.js:10
+msgid "This endpoint requires a valid API key for access."
+msgstr ""
+
+#: build/index.js:10
+msgid "This endpoint is publicly accessible without authentication."
+msgstr ""
+
+#: build/index.js:10
+msgid "An API key must be generated in the Security settings before enabling protection."
+msgstr ""
+
+#: build/index.js:10
+msgid "Endpoint Settings"
+msgstr ""
+
+#: build/index.js:10
+msgid "Endpoint Name"
+msgstr ""
+
+#: build/index.js:10
+msgid "URL Slug"
+msgstr ""
+
+#: build/index.js:10
+msgid "Generate slug from name"
+msgstr ""
+
+#: build/index.js:10
+msgid "Slug cannot be changed after creation."
+msgstr ""
+
+#: build/index.js:10
+msgid "Click the generate button or type a custom slug."
+msgstr ""
+
+#: build/index.js:10
+msgid "Optional. Describe the purpose of this endpoint."
+msgstr ""
+
+#: build/index.js:10
+msgid "Query Parameters"
+msgstr ""
+
+#: build/index.js:10
+msgid "Use WordPress Default Parameters"
+msgstr ""
+
+#. translators: %s: data source type label (e.g., Posts, Pages, Categories)
+#: build/index.js:11
+#, js-format
+msgid "View WordPress REST API documentation for %s"
+msgstr ""
+
+#: build/index.js:11
+msgid "Per Page"
+msgstr ""
+
+#: build/index.js:11
+msgid "Number of items per page (1–100)."
+msgstr ""
+
+#: build/index.js:11
+msgid "Offset"
+msgstr ""
+
+#: build/index.js:11
+msgid "Number of items to skip before returning results."
+msgstr ""
+
+#: build/index.js:11
+msgid "Order"
+msgstr ""
+
+#: build/index.js:11
+msgid "Ascending"
+msgstr ""
+
+#: build/index.js:11
+msgid "Descending"
+msgstr ""
+
+#: build/index.js:11
+msgid "Order By"
+msgstr ""
+
+#: build/index.js:11
+msgid "Endpoint created successfully."
+msgstr ""
+
+#: build/index.js:11
+msgid "Please add at least one field to the output."
+msgstr ""
+
+#: build/index.js:11
+msgid "All custom meta fields must have a meta key."
+msgstr ""
+
+#: build/index.js:11
+msgid "Duplicate custom meta keys are not allowed."
+msgstr ""
+
+#: build/index.js:11
+msgid "Endpoint updated successfully."
+msgstr ""
+
+#: build/index.js:11
+msgid "Failed to save endpoint. Please try again."
+msgstr ""
+
+#: build/index.js:11
+msgid "View API endpoint"
+msgstr ""
+
+#. translators: %s: formatted date and time
+#: build/index.js:12
+#, js-format
+msgid "Updated: %s"
+msgstr ""
+
+#: build/index.js:12
+#: build/settings-index.js:8
+msgid "Saving…"
+msgstr ""
+
+#: build/index.js:12
+msgid "Creating…"
+msgstr ""
+
+#: build/index.js:12
+msgid "Save Endpoint"
+msgstr ""
+
+#: build/index.js:12
+msgid "Unsaved Changes"
+msgstr ""
+
+#: build/index.js:12
+msgid "You have unsaved changes. Are you sure you want to leave? Your changes will be lost."
+msgstr ""
+
+#: build/index.js:12
+msgid "Keep Editing"
+msgstr ""
+
+#: build/index.js:12
+msgid "Discard Changes"
+msgstr ""
+
+#: build/index.js:12
+msgid "Loading endpoint…"
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Delete all plugin data upon uninstallation"
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "All endpoint configurations and plugin settings will be permanently removed when the plugin is deleted."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Plugin data will be preserved in the database if the plugin is uninstalled."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Export Endpoints"
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Download all endpoint configurations and global response cache settings as a JSON file."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "There are no endpoints to export."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Endpoints exported successfully."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Download Export File"
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Entry must be an object."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Invalid authentication, key restrictions or method."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "name is required and must be a non-empty string."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "slug is required and must be a non-empty string."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "data_source is required and must be a non-empty string."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "All items in fields must be strings."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "fields is required and must be a non-empty array of strings."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "This entry contains invalid extension data."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Named-key restrictions require an active key management extension."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Endpoint requires named-key restrictions and cannot be imported."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Resolve Duplicate Endpoints"
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "The following imported endpoints conflict with existing ones. Choose whether to overwrite or skip each entry."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Match"
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Action"
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Skip"
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Overwrite"
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Confirm"
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Unknown error"
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Cache settings were not restored."
+msgstr ""
+
+#: build/settings-index.js:1
+msgid "Failed to prepare import settings. No endpoints were imported."
+msgstr ""
+
+#. translators: %s: comma-separated list of endpoint names
+#: build/settings-index.js:2
+#, js-format
+msgid "Successfully saved: %s."
+msgstr ""
+
+#. translators: 1: success info (may be empty), 2: newline-separated list of failures
+#: build/settings-index.js:3
+#, js-format
+msgid "%1$sFailed to import: %2$s"
+msgstr ""
+
+#. translators: 1: number of imported endpoints, 2: number of skipped endpoints
+#: build/settings-index.js:4
+#, js-format
+msgid "Successfully imported %1$d endpoint(s). %2$d skipped."
+msgstr ""
+
+#. translators: 1: number of skipped endpoints, 2: comma-separated list of names
+#: build/settings-index.js:5
+#, js-format
+msgid "Skipped %1$d endpoint(s) with unsupported named-key restrictions: %2$s."
+msgstr ""
+
+#. translators: %d: number of protected endpoints
+#: build/settings-index.js:6
+#, js-format
+msgid "%d imported endpoint(s) have protection enabled. Please configure API keys in Security Settings to ensure these endpoints remain secured."
+msgstr ""
+
+#: build/settings-index.js:6
+msgid "Please select a .json file."
+msgstr ""
+
+#: build/settings-index.js:6
+msgid "The selected file is empty."
+msgstr ""
+
+#: build/settings-index.js:6
+msgid "Invalid JSON file. Please check the file format and try again."
+msgstr ""
+
+#: build/settings-index.js:6
+msgid "Invalid export version or cache settings."
+msgstr ""
+
+#: build/settings-index.js:6
+msgid "Import data must be an array."
+msgstr ""
+
+#. translators: %d: entry number in the import file
+#: build/settings-index.js:7
+#: build/settings-index.js:8
+#, js-format
+msgid "Entry %d"
+msgstr ""
+
+#: build/settings-index.js:7
+msgid "Unsupported endpoint configuration."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Failed to fetch existing endpoints for duplicate detection. Please try again."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Import Endpoints"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Upload a JSON file to import endpoint configurations. Included response cache settings apply to all endpoints on this site."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Upload JSON file"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Validating file…"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Importing endpoints…"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "1 minute"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "5 minutes"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "15 minutes"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "30 minutes"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "1 hour"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Failed to load cache settings."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Response caching enabled."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Response caching disabled."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Failed to update cache settings. Please try again."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Cache TTL updated."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Failed to update cache TTL. Please try again."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "No cached responses to clear."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Failed to clear cache. Please try again."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Response Cache"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Cache API responses to reduce database queries on repeated requests."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Enable response caching"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "API responses will be cached using WordPress transients."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Every API request will query the database directly."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Cache duration (TTL)"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Clear All Cache"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Failed to load API key status."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Failed to generate API key. Please try again."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Failed to regenerate API key. Please try again."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Failed to copy to clipboard."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "API Key"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Generate an API key to protect your endpoints. The key will be shown only once after generation — make sure to copy it."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Generate API Key"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Your API key is shown below. Copy it now — it will not be displayed again."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Copied!"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Copy to Clipboard"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Last regenerated:"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Regenerate API Key"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "How to Authenticate"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Add the following header to your requests when calling a protected endpoint:"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Example using cURL:"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Regenerating will immediately invalidate your current API key. Any applications using the existing key will lose access. This action cannot be undone."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Regenerate"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Failed to load settings. Using default values."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Settings saved successfully."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Import finished, but settings could not be refreshed. Reload this page before editing settings."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Configure global options for RKX API Studio."
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "General"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Tools"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Security"
+msgstr ""
+
+#: build/settings-index.js:8
+msgid "Save Settings"
+msgstr ""
