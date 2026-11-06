@@ -3,9 +3,12 @@ contact_links:
   - name: Security vulnerability
     url: https://github.com/rkxbeta/rkx-api-studio/security/advisories/new
     about: Report security issues privately. Please do not open a public issue.
-  - name: Usage questions and support
+  - name: Questions and ideas
+    url: https://github.com/rkxbeta/rkx-api-studio/discussions
+    about: Ask questions, share what you built and discuss ideas in GitHub Discussions.
+  - name: Usage support
     url: https://wordpress.org/support/plugin/rkx-api-studio/
-    about: Ask how to use the plugin in the WordPress.org support forum.
+    about: Get help using the plugin in the WordPress.org support forum.
   - name: RKX API Studio Pro, licences and purchases
     url: https://rkxbeta.com/contact
     about: The Pro add-on is supported by RKXBeta, not in this repository.

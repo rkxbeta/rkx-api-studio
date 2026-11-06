@@ -1,6 +1,7 @@
 name: CI
 
-# Runs on untrusted pull requests: read-only token, no secrets, no deployment.
+# Runs on untrusted pull requests: read-only token, no secrets, no caches, no deployment.
+# Actions are pinned to full commit SHAs; Dependabot proposes updates.
 on:
   push:
     branches: [main]
@@ -19,12 +20,13 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: 24
+          package-manager-cache: false
       - run: npm ci --ignore-scripts
       - run: npm run build
       - name: Committed build/ matches the source
@@ -38,10 +40,10 @@ jobs:
       matrix:
         php: ["8.0", "8.4"]
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
-      - uses: shivammathur/setup-php@v2
+      - uses: shivammathur/setup-php@eb7c497e18156a6bbabfef1d3a82760b9eda3962 # 2.40.0
         with:
           php-version: ${{ matrix.php }}
           coverage: none
