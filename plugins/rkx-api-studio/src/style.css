@@ -338,6 +338,14 @@
 	box-shadow: none !important;
 }
 
+.rkx-as-endpoint-builder__route {
+	display: inline-block;
+	max-width: 100%;
+	padding: 2px 6px;
+	font-size: 12px;
+	overflow-wrap: anywhere;
+}
+
 .rkx-as-endpoint-builder .components-notice {
 	margin: 0 0 20px;
 }

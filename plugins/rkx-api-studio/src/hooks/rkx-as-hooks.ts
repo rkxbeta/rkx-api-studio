@@ -43,6 +43,34 @@ export const RKX_AS_HOOK_API_CONFIG = 'rkxAs.api.config';
 
 /** REST namespace shown for an endpoint. Default: `rkx-api-studio/v1`. */
 export const RKX_AS_HOOK_ROUTE_NAMESPACE = 'rkxAs.endpoint.routeNamespace';
+/**
+ * Filter: public route path shown for an endpoint, relative to its namespace.
+ * Defaults to the endpoint slug. Extensions that register a different path
+ * (for example a single-item route) return it here.
+ *
+ * @param path   Default path (the endpoint slug).
+ * @param config Endpoint configuration.
+ */
+export const RKX_AS_HOOK_ROUTE_PATH = 'rkxAs.endpoint.routePath';
+/**
+ * Filter: single-item route of an endpoint, or null for a collection.
+ * Extensions that serve one record per request return the route parameter
+ * name and the path pattern (relative to the namespace) containing `{param}`.
+ * The builder then hides pagination and ordering controls and previews one
+ * object.
+ *
+ * @param route  Default null.
+ * @param config Endpoint configuration.
+ */
+export const RKX_AS_HOOK_SINGLE_ITEM = 'rkxAs.endpoint.singleItem';
+
+/** Single-item route description returned through RKX_AS_HOOK_SINGLE_ITEM. */
+export interface SingleItemRoute {
+	/** Route parameter name, for example `slug` or `id`. */
+	param: string;
+	/** Path pattern relative to the namespace, for example `posts/{slug}`. */
+	path: string;
+}
 
 /** Endpoint entry parsed from an import file. */
 export const RKX_AS_HOOK_IMPORT_ENDPOINT = 'rkxAs.import.endpoint';
@@ -59,4 +87,22 @@ export function applyComponentFilters(
 	...args: unknown[]
 ): ReactNode {
 	return applyFilters( hook, value, ...args ) as ReactNode;
+}
+
+/**
+ * Single-item route for an endpoint, or null for a collection endpoint.
+ * @param config Endpoint configuration.
+ */
+export function getSingleItemRoute( config: unknown ): SingleItemRoute | null {
+	const route = applyFilters( RKX_AS_HOOK_SINGLE_ITEM, null, config ) as
+		| Partial< SingleItemRoute >
+		| null
+		| undefined;
+	return route &&
+		typeof route.param === 'string' &&
+		route.param !== '' &&
+		typeof route.path === 'string' &&
+		route.path.includes( `{${ route.param }}` )
+		? { param: route.param, path: route.path }
+		: null;
 }

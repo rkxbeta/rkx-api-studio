@@ -1,7 +1,8 @@
 import { applyFilters } from '@wordpress/hooks';
 import { useState, useEffect, useRef } from '@wordpress/element';
 import apiFetch from '@wordpress/api-fetch';
-import { __ } from '@wordpress/i18n';
+import { __, sprintf } from '@wordpress/i18n';
+import type { SingleItemRoute } from '../hooks/rkx-as-hooks';
 import {
 	isTaxonomyField,
 	getTaxonomySlug,
@@ -28,6 +29,10 @@ interface JsonPreviewProps {
 	taxonomyFilters?: Record< string, number[] >;
 	fieldFormatters?: FieldFormattersMap;
 	config?: unknown;
+	/** Single-item route: the preview shows one object at a sample URL. */
+	singleItem?: SingleItemRoute | null;
+	/** REST namespace shown in the single-item sample URL. */
+	routeNamespace?: string;
 }
 
 export function applyClientFormatter(
@@ -364,6 +369,8 @@ export function JsonPreview( {
 	taxonomyFilters,
 	fieldFormatters = {},
 	config,
+	singleItem = null,
+	routeNamespace = 'rkx-api-studio/v1',
 }: JsonPreviewProps ) {
 	const [ liveData, setLiveData ] = useState<
 		Record< string, unknown >[] | null
@@ -484,7 +491,7 @@ export function JsonPreview( {
 					{ __( 'JSON Preview', 'rkx-api-studio' ) }
 				</h3>
 				<pre className="rkx-as-json-preview__code">
-					<code>[]</code>
+					<code>{ singleItem ? '{}' : '[]' }</code>
 				</pre>
 			</div>
 		);
@@ -495,7 +502,13 @@ export function JsonPreview( {
 	const mockSource = postType ? POST_MOCK_SAMPLES : TAXONOMY_MOCK_SAMPLES;
 
 	let displayData: Record< string, unknown >[];
+	let sampleRecord: Record< string, unknown > | undefined;
 	const showingLive = hasLive && liveData !== null && liveData.length > 0;
+
+	if ( showingLive && singleItem ) {
+		// One real record: the object the route returns for its slug or ID.
+		sampleRecord = liveData![ 0 ];
+	}
 
 	if ( showingLive ) {
 		// Sort the live data client-side based on order/orderby.
@@ -517,7 +530,9 @@ export function JsonPreview( {
 
 		// Apply offset and limit.
 		const limit = Math.min( perPage, 3 );
-		sorted = sorted.slice( offset, offset + limit );
+		sorted = sampleRecord
+			? [ sampleRecord ]
+			: sorted.slice( offset, offset + limit );
 
 		displayData = sorted.map( ( liveItem, idx ) => {
 			const picked: Record< string, unknown > = {};
@@ -564,6 +579,10 @@ export function JsonPreview( {
 		} );
 	} else {
 		displayData = getMockData( dataSource, fields, metadata );
+		if ( singleItem ) {
+			sampleRecord = mockSource[ 0 ];
+			displayData = displayData.slice( 0, 1 );
+		}
 	}
 
 	displayData = applyFormattersToItems(
@@ -572,7 +591,24 @@ export function JsonPreview( {
 		fieldFormatters
 	);
 
-	const jsonString = JSON.stringify( displayData, null, 2 );
+	let sampleUrl = '';
+	if ( singleItem ) {
+		const fallback = singleItem.param === 'id' ? '1' : 'sample-slug';
+		const value = sampleRecord?.[ singleItem.param ];
+		sampleUrl = `/wp-json/${ routeNamespace }/${ singleItem.path
+			.split( `{${ singleItem.param }}` )
+			.join(
+				typeof value === 'string' || typeof value === 'number'
+					? String( value )
+					: fallback
+			) }`;
+	}
+
+	const jsonString = JSON.stringify(
+		singleItem ? displayData[ 0 ] ?? {} : displayData,
+		null,
+		2
+	);
 	const highlighted = syntaxHighlight( jsonString );
 
 	const badgeText = showingLive
@@ -583,7 +619,16 @@ export function JsonPreview( {
 		: 'rkx-as-json-preview__badge--sample';
 
 	let footerText: string;
-	if ( showingLive ) {
+	if ( showingLive && singleItem ) {
+		footerText = sprintf(
+			/* translators: %s: route parameter name, for example slug or id */
+			__(
+				'Showing the single object returned for one real record. Requests whose %s matches no published record return HTTP 404.',
+				'rkx-api-studio'
+			),
+			singleItem.param
+		);
+	} else if ( showingLive ) {
 		footerText = __(
 			'Showing up to 3 real items from your site. Full response available at the API URL.',
 			'rkx-api-studio'
@@ -610,27 +655,35 @@ export function JsonPreview( {
 				</span>
 			</div>
 			<div className="rkx-as-json-preview__query-info">
-				<code>
-					?per_page={ perPage }&order={ order }&orderby={ orderby }
-					{ offset > 0 ? `&offset=${ offset }` : '' }
-					{ taxonomyFilters &&
-						metadata &&
-						Object.entries( taxonomyFilters )
-							.filter( ( [ , ids ] ) => ids.length > 0 )
-							.map( ( [ slug, ids ] ) => {
-								const ptEntry = metadata.postTypes.find(
-									( pt ) =>
-										pt.slug === dataSource ||
-										pt.restBase === dataSource
-								);
-								const taxEntry = ptEntry?.taxonomies?.find(
-									( t ) => t.slug === slug
-								);
-								const paramName = taxEntry?.restBase || slug;
-								return `&${ paramName }=${ ids.join( ',' ) }`;
-							} )
-							.join( '' ) }
-				</code>
+				{ singleItem ? (
+					<code>GET { sampleUrl }</code>
+				) : (
+					<code>
+						?per_page={ perPage }&order={ order }&orderby=
+						{ orderby }
+						{ offset > 0 ? `&offset=${ offset }` : '' }
+						{ taxonomyFilters &&
+							metadata &&
+							Object.entries( taxonomyFilters )
+								.filter( ( [ , ids ] ) => ids.length > 0 )
+								.map( ( [ slug, ids ] ) => {
+									const ptEntry = metadata.postTypes.find(
+										( pt ) =>
+											pt.slug === dataSource ||
+											pt.restBase === dataSource
+									);
+									const taxEntry = ptEntry?.taxonomies?.find(
+										( t ) => t.slug === slug
+									);
+									const paramName =
+										taxEntry?.restBase || slug;
+									return `&${ paramName }=${ ids.join(
+										','
+									) }`;
+								} )
+								.join( '' ) }
+					</code>
+				) }
 			</div>
 			<pre className="rkx-as-json-preview__code">
 				<code dangerouslySetInnerHTML={ { __html: highlighted } } />

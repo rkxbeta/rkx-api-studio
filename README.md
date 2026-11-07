@@ -12,9 +12,10 @@ Build clean, read-only REST API endpoints for your WordPress content visually.
 RKX API Studio is a free WordPress plugin. You use it from the WordPress admin to create custom read-only (GET) REST API endpoints. Each endpoint returns only the fields a headless front end, mobile app or external integration needs.
 
 - **Install:** [WordPress.org Plugin Directory](https://wordpress.org/plugins/rkx-api-studio/) (recommended; updates come from WordPress.org)
-- **Download:** [`rkx-api-studio-1.0.0.zip`](https://github.com/rkxbeta/rkx-api-studio/releases/latest) from GitHub Releases, for manual installation
+- **Download:** [`rkx-api-studio-1.0.1.zip`](https://github.com/rkxbeta/rkx-api-studio/releases/latest) from GitHub Releases, for manual installation
 - **Documentation:** <https://rkxbeta.com/plugins/rkx-api-studio/docs>
 - **Product page:** <https://rkxbeta.com/plugins/rkx-api-studio>
+- **Video Tutorial:** <https://www.youtube.com/watch?v=5KA5GXjbE60>
 
 This repository holds the source code of the free plugin, published under the GPL. Report bugs and suggest features in [Issues](https://github.com/rkxbeta/rkx-api-studio/issues); ask questions in [Discussions](https://github.com/rkxbeta/rkx-api-studio/discussions).
 

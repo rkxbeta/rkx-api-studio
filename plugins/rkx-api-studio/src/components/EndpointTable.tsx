@@ -4,6 +4,7 @@ import { __, sprintf, _n } from '@wordpress/i18n';
 import type { EndpointConfig } from '../types';
 import {
 	RKX_AS_HOOK_ROUTE_NAMESPACE,
+	RKX_AS_HOOK_ROUTE_PATH,
 	RKX_AS_REST_NAMESPACE,
 } from '../hooks/rkx-as-hooks';
 
@@ -31,6 +32,8 @@ export interface RowAction {
 	icon: JSX.Element;
 	isDestructive?: boolean;
 	supportsBulk?: boolean;
+	/** Whether the action applies to an endpoint. Defaults to every endpoint. */
+	isEligible?: ( item: EndpointConfig ) => boolean;
 	callback: ( items: EndpointConfig[] ) => void | Promise< void >;
 }
 
@@ -45,6 +48,16 @@ export function routeNamespaceFor( item: EndpointConfig ): string {
 			RKX_AS_REST_NAMESPACE,
 			item
 		) || RKX_AS_REST_NAMESPACE
+	);
+}
+
+/**
+ * Public route path shown for an endpoint, relative to its namespace.
+ * @param item Endpoint configuration.
+ */
+export function routePathFor( item: EndpointConfig ): string {
+	return String(
+		applyFilters( RKX_AS_HOOK_ROUTE_PATH, item.slug, item ) || item.slug
 	);
 }
 
@@ -304,7 +317,13 @@ export function EndpointTable( {
 									</td>
 								) ) }
 								<td className="rkx-as-endpoint-table__actions">
-									{ actions.map( ( action ) => (
+									{ actions
+										.filter(
+											( action ) =>
+												! action.isEligible ||
+												action.isEligible( item )
+										)
+										.map( ( action ) => (
 										<Button
 											key={ action.id }
 											size="small"
