@@ -16,11 +16,13 @@ import { downloadExportFile } from '../utils/export-utils';
 import { clearEndpointCache } from '../api/settings-client';
 import { ConfirmationModal } from './ConfirmationModal';
 import { MethodBadge } from './MethodBadge';
+import { getSingleItemRoute } from '../hooks/rkx-as-hooks';
 import { ProPromotionSection } from './ProPromotionSection';
 import {
 	EndpointTable,
 	filterSortAndPaginateEndpoints,
 	routeNamespaceFor,
+	routePathFor,
 } from './EndpointTable';
 import type { ColumnDefinition, ListView, RowAction } from './EndpointTable';
 
@@ -184,7 +186,8 @@ export function EndpointList( { onEdit, onCreate }: EndpointListProps ) {
 				label: __( 'API URL', 'rkx-api-studio' ),
 				render: ( item ) => (
 					<code>
-						/wp-json/{ routeNamespaceFor( item ) }/{ item.slug }
+						/wp-json/{ routeNamespaceFor( item ) }/
+						{ routePathFor( item ) }
 					</code>
 				),
 			},
@@ -295,12 +298,14 @@ export function EndpointList( { onEdit, onCreate }: EndpointListProps ) {
 				id: 'view',
 				label: __( 'View API', 'rkx-api-studio' ),
 				icon: external,
+				// A single-item route needs a slug or ID, so there is no URL to open.
+				isEligible: ( item ) => getSingleItemRoute( item ) === null,
 				callback: ( items ) => {
 					const item = items[ 0 ];
 					window.open(
-						`/wp-json/${ routeNamespaceFor( item ) }/${
-							item.slug
-						}`,
+						`/wp-json/${ routeNamespaceFor(
+							item
+						) }/${ routePathFor( item ) }`,
 						'_blank'
 					);
 				},

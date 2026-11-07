@@ -3,7 +3,9 @@ import {
 	RKX_AS_HOOK_EXTENSION_FIELD_GROUPS,
 	RKX_AS_HOOK_METHOD_PANEL,
 	RKX_AS_HOOK_ROUTE_NAMESPACE,
+	RKX_AS_HOOK_ROUTE_PATH,
 	RKX_AS_REST_NAMESPACE,
+	getSingleItemRoute,
 } from '../hooks/rkx-as-hooks';
 import { useState, useCallback, useEffect, useRef } from '@wordpress/element';
 import { Button, Modal, Notice, Tooltip } from '@wordpress/components';
@@ -157,6 +159,14 @@ export function EndpointBuilder( { config, onCancel }: EndpointBuilderProps ) {
 			state.config
 		) || RKX_AS_REST_NAMESPACE
 	);
+	const routePath = String(
+		applyFilters(
+			RKX_AS_HOOK_ROUTE_PATH,
+			state.config.slug,
+			state.config
+		) || state.config.slug
+	);
+	const singleItem = getSingleItemRoute( state.config );
 
 	// Show success notice after redirect from newly created endpoint.
 	useEffect( () => {
@@ -424,13 +434,18 @@ export function EndpointBuilder( { config, onCancel }: EndpointBuilderProps ) {
 								: __( 'Create Endpoint', 'rkx-api-studio' ) }
 						</h2>
 					</div>
-					{ isEditMode && state.config.slug && (
+					{ isEditMode && state.config.slug && singleItem && (
+						<code className="rkx-as-endpoint-builder__route">
+							{ `GET /wp-json/${ routeNamespace }/${ routePath }` }
+						</code>
+					) }
+					{ isEditMode && state.config.slug && ! singleItem && (
 						<Tooltip
-							text={ `/wp-json/${ routeNamespace }/${ state.config.slug }` }
+							text={ `/wp-json/${ routeNamespace }/${ routePath }` }
 						>
 							<a
 								className="rkx-as-endpoint-builder__view-link"
-								href={ `${ window.location.origin }/wp-json/${ routeNamespace }/${ state.config.slug }` }
+								href={ `${ window.location.origin }/wp-json/${ routeNamespace }/${ routePath }` }
 								target="_blank"
 								rel="noopener noreferrer"
 								aria-label={ __(
@@ -570,6 +585,7 @@ export function EndpointBuilder( { config, onCancel }: EndpointBuilderProps ) {
 					taxonomyFilters={ state.config.taxonomyFilters ?? {} }
 					errors={ state.errors }
 					dispatch={ dispatch }
+					singleItem={ singleItem !== null }
 				/>
 			) }
 
@@ -642,6 +658,8 @@ export function EndpointBuilder( { config, onCancel }: EndpointBuilderProps ) {
 					taxonomyFilters={ state.config.taxonomyFilters }
 					fieldFormatters={ state.config.fieldFormatters ?? {} }
 					config={ state.config }
+					singleItem={ singleItem }
+					routeNamespace={ routeNamespace }
 				/>
 			) }
 

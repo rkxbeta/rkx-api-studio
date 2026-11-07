@@ -33,6 +33,12 @@ interface QueryParametersPanelProps {
 	taxonomyFilters: TaxonomyFiltersMap;
 	errors: Record< string, string >;
 	dispatch: React.Dispatch< BuilderAction >;
+	/**
+	 * The endpoint returns one record per request (see the
+	 * rkxAs.endpoint.singleItem hook). Pagination and ordering do not apply,
+	 * so only record filters are shown.
+	 */
+	singleItem?: boolean;
 }
 
 export function QueryParametersPanel( {
@@ -46,6 +52,7 @@ export function QueryParametersPanel( {
 	taxonomyFilters,
 	errors,
 	dispatch,
+	singleItem = false,
 }: QueryParametersPanelProps ) {
 	const handlePerPageChange = ( value: string ) => {
 		const num = parseInt( value, 10 );
@@ -97,6 +104,42 @@ export function QueryParametersPanel( {
 		postTypes: [],
 		taxonomies: [],
 	};
+
+	const showTaxonomyFilters =
+		isPostType && ! isTaxonomy && availableTaxonomies.length > 0;
+	const renderTaxonomyFilters = ( disabled: boolean ) => (
+		<div className="rkx-as-query-parameters__taxonomy-filters">
+			{ availableTaxonomies.map( ( tax ) => (
+				<TaxonomyFilterControl
+					key={ tax.slug }
+					taxonomy={ tax }
+					selectedTermIds={ taxonomyFilters[ tax.slug ] ?? [] }
+					disabled={ disabled }
+					dispatch={ dispatch }
+				/>
+			) ) }
+		</div>
+	);
+
+	if ( singleItem ) {
+		if ( ! showTaxonomyFilters ) {
+			return null;
+		}
+		return (
+			<div className="rkx-as-query-parameters rkx-as-query-parameters--single-item">
+				<h3 className="rkx-as-query-parameters__title">
+					{ __( 'Record Filters', 'rkx-api-studio' ) }
+				</h3>
+				<p className="components-base-control__help">
+					{ __(
+						'Optional. Only records assigned to the selected terms are returned. Pagination and ordering do not apply to single-item endpoints.',
+						'rkx-api-studio'
+					) }
+				</p>
+				{ renderTaxonomyFilters( false ) }
+			</div>
+		);
+	}
 
 	return (
 		<div className="rkx-as-query-parameters">
@@ -241,21 +284,8 @@ export function QueryParametersPanel( {
 				/>
 			</div>
 
-			{ isPostType && ! isTaxonomy && availableTaxonomies.length > 0 && (
-				<div className="rkx-as-query-parameters__taxonomy-filters">
-					{ availableTaxonomies.map( ( tax ) => (
-						<TaxonomyFilterControl
-							key={ tax.slug }
-							taxonomy={ tax }
-							selectedTermIds={
-								taxonomyFilters[ tax.slug ] ?? []
-							}
-							disabled={ !! useWordPressDefaults }
-							dispatch={ dispatch }
-						/>
-					) ) }
-				</div>
-			) }
+			{ showTaxonomyFilters &&
+				renderTaxonomyFilters( !! useWordPressDefaults ) }
 		</div>
 	);
 }

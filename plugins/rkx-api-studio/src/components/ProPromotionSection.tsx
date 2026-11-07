@@ -30,7 +30,7 @@ export function ProPromotionSection( {
 	const proComparisonItems = [
 		__( 'Custom namespaces.', 'rkx-api-studio' ),
 		__( 'Write operations.', 'rkx-api-studio' ),
-		__( 'ACF integration.', 'rkx-api-studio' ),
+		__( 'ACF / SCF integration.', 'rkx-api-studio' ),
 		__( 'Gutenberg block parsing.', 'rkx-api-studio' ),
 		__( 'Advanced Regex formatting.', 'rkx-api-studio' ),
 		__( 'Named API keys.', 'rkx-api-studio' ),

@@ -1,6 +1,6 @@
 {
   "name": "rkx-api-studio",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create custom, clean REST API endpoints visually from the WordPress Admin panel.",
   "author": "RKXBeta",
   "license": "GPL-2.0-or-later",

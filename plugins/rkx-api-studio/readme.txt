@@ -4,7 +4,7 @@ Tags: rest-api, headless, api, endpoints
 Requires at least: 6.8
 Tested up to: 7.1
 Requires PHP: 8.0
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -32,12 +32,21 @@ RKX API Studio Pro is a separately distributed add-on that extends the Free plug
 
 * Custom REST API namespaces
 * Write endpoints (`POST`, `PUT`, and `DELETE` operations)
-* Advanced Custom Fields (ACF) integration
+* Advanced Custom Fields (ACF) and Secure Custom Fields (SCF) integration
 * Structured Gutenberg block parsing
 * Advanced multi-rule Regex formatters
 * Named API keys with per-endpoint access assignment
+* Single-item routes with a path parameter, such as `posts/{slug}` or `categories/{slug}`
 
 Learn more on the [RKX API Studio product page](https://rkxbeta.com/plugins/rkx-api-studio).
+
+= Video Tutorials =
+
+* [RKX API Studio video tutorial on YouTube](https://www.youtube.com/watch?v=5KA5GXjbE60)
+
+= Example project =
+
+The Headless Journal is an open-source Astro front end published by RKXBeta to demonstrate RKX API Studio Free and Pro. Explore the published reference architecture, sample content, and three integration modes on [GitHub](https://github.com/rkxbeta/headless-wordpress-astro-demo).
 
 == Security and data handling ==
 * Only administrators (users with the manage_options capability) can create, change, import or delete endpoints and keys.
@@ -71,8 +80,18 @@ Every endpoint is available under `rkx-api-studio/v1`.
 No. Data is deleted only when you uninstall the plugin after enabling "Delete data on uninstall". If the RKX API Studio Pro add-on is still installed, or on Multisite, data is kept.
 
 = Can endpoints write data? =
-No. RKX API Studio provides read-only GET endpoints.
+RKX API Studio Free provides read-only GET endpoints.
+
+The separate RKX API Studio Pro add-on supports custom write endpoints (POST, PUT, and DELETE) that dispatch authenticated developer action hooks (`rkx_as_{method}_{slug}`). Write endpoints do not automatically create, update, or delete WordPress content; your application or custom plugin implements the action hooks, input validation, and database operations.
 
 == Changelog ==
+= 1.0.1 =
+* Endpoint builder: when an installed extension serves an endpoint as a single-item route, pagination and ordering controls are hidden. Only taxonomy term filters remain, because they still decide which records match.
+* JSON preview: single-item endpoints are previewed as one object, with a sample request URL built from a real record.
+* The builder header and the endpoint list show the public route reported by an installed extension. "View API" is not offered for routes that need a slug or ID.
+* Developers: new JavaScript filters `rkxAs.endpoint.routePath` and `rkxAs.endpoint.singleItem`.
+* Readme: added a video tutorial link and the Headless Journal example project.
+* No changes to REST responses, stored data or PHP code.
+
 = 1.0.0 =
 First public release.

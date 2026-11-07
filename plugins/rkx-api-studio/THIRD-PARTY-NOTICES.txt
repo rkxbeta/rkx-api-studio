@@ -1,4 +1,4 @@
-Third-party notices for RKX API Studio Free 1.0.0
+Third-party notices for RKX API Studio Free 1.0.1
 
 Includes packages seen in the production compilation, including tree-shaken modules. WordPress-provided externals are not bundled.
 
